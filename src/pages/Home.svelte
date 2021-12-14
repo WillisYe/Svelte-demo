@@ -1,6 +1,4 @@
 <script>
-    import Apis from "../utils/api.js";
-
     var list = {
         data: [],
         searchParams: {},
@@ -55,20 +53,12 @@
     };
 
     list.init();
-
-    // Apis.test()
-    //     .then(function (response) {
-    //         console.log(response);
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     });
 </script>
 
 <div class="page-wrap">
     <div class="flex flex-row p-1 mt-2">
         <h1 class="flex-1 font-black">
-            待办事项(构建工具使用vite或者snowpack，待处理)
+            <!-- 待办事项(构建工具使用vite或者snowpack，待处理) -->
         </h1>
         <div on:click={list.addItem()} class="btn btn-blue mr-1">添加</div>
         <div on:click={list.clear()} class="btn btn-red">清空</div>
@@ -120,9 +110,8 @@
 </div>
 
 <style>
-    .page-wrap {
-        h1 {
-            cursor: pointer;
-        }
+    h1 {
+        cursor: pointer;
+        color: red;
     }
 </style>
