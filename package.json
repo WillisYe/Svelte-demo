@@ -18,7 +18,7 @@
     "postcss-nested": "^4.0.0",
     "postcss-preset-env": "^6.7.0",
     "sass": "^1.32.8",
-    "svelte": "^3.37.0",
+    "svelte": "^3.49.0",
     "svelte-preprocess": "^4.9.8",
     "tailwindcss": "*",
     "vite": "^2.6.4"
