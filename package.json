@@ -21,6 +21,6 @@
     "svelte": "^3.37.0",
     "svelte-preprocess": "^4.9.8",
     "tailwindcss": "*",
-    "vite": "^2.6.4"
+    "vite": "^2.9.13"
   }
 }
