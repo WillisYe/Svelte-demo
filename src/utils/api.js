@@ -1,8 +1,8 @@
 /*
  * @Author: dary
  * @Date: 2021-01-28 17:16:06
- * @LastEditors: dary
- * @LastEditTime: 2021-04-12 16:07:10
+ * @LastEditors: Dary
+ * @LastEditTime: 2022-03-15 11:55:22
  * @Description: file content
  */
 import axios from 'axios'
@@ -11,8 +11,11 @@ var Apis = {
   test(date) {
     return axios.get(`/api/${date}.log`, {})
   },  
-  test1() {
-    return axios.post('https://www.onenote.com/api/v1.0/me/notes/pages', {})
+  getCatImg(code) {
+    return axios.post(`/apix/cat/${code}`, {})
+  },
+  test1(code) {
+    return axios.post(`/apix/list`, {})
   }
 }
 

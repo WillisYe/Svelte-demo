@@ -1,4 +1,5 @@
 <script>
+  // 崩溃日志已禁用
   import Apis from "../utils/api.js";
   var years = Array(100)
     .fill(1)
@@ -22,6 +23,7 @@
   }
   // 崩溃日志只能查2021-03-12之后的，只能查最近一个月的?
   var days = getDays(30);
+  days = [];
 
   var list = {
     keys: [],
@@ -74,14 +76,14 @@
           var data = [];
           for (const item of arr) {
             // NSGenericException异常会有多行报错信息，只保留异常名称；
-            item.carsh_info = item.carsh_info || 'NSGenericException';
-            if (item.eurl.startsWith('file:///')) {
+            item.carsh_info = item.carsh_info || "NSGenericException";
+            if (item.eurl.startsWith("file:///")) {
               // 本机路径名较长，缩减
-              item.eurl = 'file:///www/view.umd.min.js'
+              item.eurl = "file:///www/view.umd.min.js";
             }
-            if (item.eurl.startsWith('https://h5.shinetour.com')) {
+            if (item.eurl.startsWith("https://h5.shinetour.com")) {
               // 移除时间戳
-              item.eurl = item.eurl.split('?')[0];
+              item.eurl = item.eurl.split("?")[0];
             }
             var cur = data.find(
               (i) => i.carsh_info == item.carsh_info && i.eurl == item.eurl
@@ -159,8 +161,8 @@
   list.init();
 </script>
 
-<div class="page-wrap">
-  <div class="flex flex-row p-1 mt-2">
+<div class="page-wrap p">
+  <div class="flex flex-row p-1 mt-2 items-center">
     <h1 class="flex-1 font-black">uniApp崩溃日志数据分析</h1>
     <div on:click={list.changeType("H5")} class="btn btn-blue mr-1">
       只看H5({list.count.H5})
@@ -176,8 +178,11 @@
     </div>
   </div>
   <div class="mb-2">
-    <p>NSGenericException这个异常最容易出现在foreach操作中，在for in循环中如果修改所遍历的数组，无论你是add或remove，都会出错;</p>
-    <p>暂定解决方案，直接更改Array.prototype上的foreach方法；<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">采用MDN上的Polyfill；</a></p>
+    <p class="page-wrap-p">
+      NSGenericException这个异常最容易出现在foreach操作中，在for
+      in循环中如果修改所遍历的数组，无论你是add或remove，都会出错;
+    </p>
+    <!-- <p>暂定解决方案，直接更改Array.prototype上的foreach方法；<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">采用MDN上的Polyfill；</a></p> -->
   </div>
 
   {#if list.dataShow.length}
@@ -216,7 +221,10 @@
   <div class="footer mt-2 text-right">共{list.dataShow.length}项</div>
 </div>
 
-<style>
+<style lang="postcss">
+  :root {
+    --mainColor: #12345678;
+  }
   td {
     max-width: 300px;
   }
@@ -227,5 +235,10 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+  }
+  .page-wrap {
+    p {
+      color: var(--mainColor);
+    }
   }
 </style>

@@ -6,5 +6,5 @@
  * @Description: file content
 -->
 
-svelte + vite + tailwindcss SPA
+svelte + vite + unocss SPA
 svelte uni_crash_log

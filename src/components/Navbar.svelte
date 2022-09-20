@@ -51,11 +51,20 @@
       <a
         href="/random"
         class="block mt-4 sm:inline-block sm:mt-0 text-indigo-100
-        hover:text-white nav-link"
+        hover:text-white mr-4 nav-link"
         use:link
         use:active
       >
         shape
+      </a>
+      <a
+        href="/Canvas"
+        class="block mt-4 sm:inline-block sm:mt-0 text-indigo-100
+        hover:text-white mr-4 nav-link"
+        use:link
+        use:active
+      >
+        Canvas
       </a>
     </div>
   </div>

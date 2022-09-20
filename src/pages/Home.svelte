@@ -1,4 +1,89 @@
 <script>
+    import axios from "axios";
+    import Apis from "../utils/api.js";
+    async function apitest(request) {
+        // https://fragrant-waterfall-d607.ywbyl7722.workers.dev
+        // await axios.post(
+        //     `https://fragrant-waterfall-d607.ywbyl7722.workers.dev/item?id=2`,
+        //     { id: 2, test: "test222" }
+        // );
+        // await axios.get(
+        //     `https://fragrant-waterfall-d607.ywbyl7722.workers.dev/item/2`
+        // );
+        // await axios.delete(
+        //     `https://fragrant-waterfall-d607.ywbyl7722.workers.dev/item/undefined`
+        // );
+        // await axios.get(
+        //     `https://fragrant-waterfall-d607.ywbyl7722.workers.dev/list`
+        // );
+        // await axios.post(`https://test.cors.workers.dev/`);
+    }
+
+    apitest();
+
+    var ws = {
+        ws: '',
+        init() {
+            ws.ws = new WebSocket(
+                "ws://white-morning-6a1d.ywbyl7722.workers.dev"
+            )
+        },
+        addEvent() {
+            ws.ws.addEventListener("open", function (event) {
+                console.log("socket open--------- ");
+                ws.ws.send("CLICK");
+            });
+
+            ws.ws.addEventListener("message", function (event) {
+                console.log("socket message--------- ", event.data);
+            });
+
+            ws.ws.addEventListener("error", function (event) {
+                console.log("socket error--------- ");
+            });
+
+            ws.ws.addEventListener("close", function (event) {
+                console.log("socket close--------- ");
+            });
+        },
+        send() {
+            switch (ws.ws.readyState) {
+                case WebSocket.CONNECTING:
+                    // do something
+                    break;
+                case WebSocket.OPEN:
+                    ws.ws.send("CLICK");
+                    break;
+                case WebSocket.CLOSING:
+                    // do something
+                    break;
+                case WebSocket.CLOSED:
+                    // do something
+                    break;
+                default:
+                    // this never happens
+                    break;
+            }
+        }
+    };
+    
+    ws.init()
+    ws.addEvent()
+
+    // Apis.getCatImg("100")
+    //     .then((res) => {
+    //         // console.log("then----", res);
+    //     })
+    //     .catch((err) => {
+    //         // console.log("catch----", err);
+    //     });
+    // Apis.test1("100")
+    //     .then((res) => {
+    //         console.log("then----", res);
+    //     })
+    //     .catch((err) => {
+    //         console.log("catch----", err);
+    //     });
     var list = {
         data: [],
         searchParams: {},
@@ -56,10 +141,11 @@
 </script>
 
 <div class="page-wrap">
-    <div class="flex flex-row p-1 mt-2">
+    <div class="flex flex-row p-1 mt-2 items-center">
         <h1 class="flex-1 font-black">
             <!-- 待办事项(构建工具使用vite或者snowpack，待处理) -->
         </h1>
+        <div on:click={ws.send} class="btn btn-blue mr-1">send</div>
         <div on:click={list.addItem()} class="btn btn-blue mr-1">添加</div>
         <div on:click={list.clear()} class="btn btn-red">清空</div>
     </div>

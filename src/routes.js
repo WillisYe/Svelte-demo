@@ -1,18 +1,20 @@
 /*
  * @Author: dary
  * @Date: 2021-01-28 16:18:59
- * @LastEditors: dary
- * @LastEditTime: 2021-01-28 16:28:51
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-12-23 10:44:53
  * @Description: file content
  */
 import Home from "./pages/Home.svelte";
 import Random from "./pages/Random.svelte";
 import Hello from "./pages/Hello.svelte";
+import Canvas from "./pages/Canvas.svelte";
 
 const routes = {
   "/": Home,
   "/random": Random,
   "/hello/:name?": Hello,
+  "/Canvas": Canvas,
 };
 
 export default routes;
