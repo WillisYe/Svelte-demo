@@ -23,7 +23,7 @@
   }
   // 崩溃日志只能查2021-03-12之后的，只能查最近一个月的?
   var days = getDays(30);
-  days = [];
+  // days = [];
 
   var list = {
     keys: [],
@@ -38,11 +38,15 @@
     },
     getData() {
       var ps = days.map((item) => Apis.test(item));
-      Promise.all(ps)
+      Promise.allSettled(ps)
         .then((res) => {
           var dataAll = "";
+          console.log('res======')
+          console.log(res)
           for (const r of res) {
-            dataAll += "\n" + r.data;
+            if (r?.value?.data) {
+              dataAll += "\n" + r?.value?.data;
+            }
           }
           var arr_temp = dataAll.split("\n");
           arr_temp = arr_temp.filter((item) => {
@@ -91,7 +95,7 @@
               // && i.os == item.os
               // && i.md == item.md
             );
-            if (cur) {
+            if (cur && false) {
               cur.count += 1;
             } else {
               data.push({ ...item, count: 1 });
@@ -99,6 +103,8 @@
           }
           data = data.sort((prev, cur) => cur.count - prev.count);
           list.data = data;
+          console.log('list.data')
+          console.log(list.data)
           list.dataShow = JSON.parse(JSON.stringify(list.data));
           list.count = {
             all: list.filter("all").length,
@@ -223,7 +229,7 @@
 
 <style lang="postcss">
   :root {
-    --mainColor: #12345678;
+    --mainColor: #ff0000ff;
   }
   td {
     max-width: 300px;

@@ -22,7 +22,7 @@
     apitest();
 
     var ws = {
-        ws: '',
+        ws: null,
         init() {
             ws.ws = new WebSocket(
                 "ws://white-morning-6a1d.ywbyl7722.workers.dev"

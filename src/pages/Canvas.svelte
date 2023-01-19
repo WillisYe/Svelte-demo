@@ -1,11 +1,12 @@
 <script>
   let start;
+  var canvas;
   renderCanvas();
 
   function renderCanvas() {
     setTimeout(() => {
       // 五角星
-      var canvas = document.getElementById("canvas");
+      canvas = document.querySelector("canvas#canvas");
       if (canvas.getContext) {
         var ctx = canvas.getContext("2d");
         draw(ctx, 5);
@@ -61,8 +62,8 @@
     borderStyle = "pink",
     fillStyle = "yellow"
   ) {
-    canvas.setAttribute("width", 2 * R);
-    canvas.setAttribute("height", 2 * R);
+    canvas.setAttribute("width", 2 * R + '');
+    canvas.setAttribute("height", 2 * R + '');
     drawStar(ctx, n, r, R, x, y, rot, borderWidth, borderStyle, fillStyle);
   }
 
