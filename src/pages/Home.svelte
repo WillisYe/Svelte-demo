@@ -67,8 +67,8 @@
         }
     };
     
-    ws.init()
-    ws.addEvent()
+    // ws.init()
+    // ws.addEvent()
 
     // Apis.getCatImg("100")
     //     .then((res) => {
