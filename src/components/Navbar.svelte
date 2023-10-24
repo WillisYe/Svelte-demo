@@ -1,6 +1,12 @@
 <script>
   import { link } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
+  import routes from "../routes.js";
+
+  var navs = Object.keys(routes)
+    .map((item) => item.split("/")[1])
+    .filter((item) => item);
+  console.log(navs);
 </script>
 
 <nav class="flex items-center justify-between flex-wrap">
@@ -28,44 +34,16 @@
   </div>
   <div class="w-full block flex-grow sm:flex sm:items-center sm:w-auto">
     <div class="text-sm sm:flex-grow">
-      <a
-        href="/"
-        class="block mt-4 sm:inline-block sm:mt-0 text-indigo-100 hover:text-white mr-4 nav-link"
-        use:link
-        use:active
-      >
-        Todo
-      </a>
-      {#if import.meta.env.DEV}
+      {#each navs as item, i}
         <a
-          href="/hello/"
-          class="block mt-4 sm:inline-block sm:mt-0 text-indigo-100
-        hover:text-white font-light mr-4 nav-link"
+          href="/{item}"
+          class="block mt-4 sm:inline-block sm:mt-0 text-indigo-100 hover:text-white mr-4 nav-link"
           use:link
-          use:active={{ path: "/hello/*" }}
+          use:active
         >
-          uniapp
+          {item}
         </a>
-      {/if}
-
-      <a
-        href="/random"
-        class="block mt-4 sm:inline-block sm:mt-0 text-indigo-100
-        hover:text-white mr-4 nav-link"
-        use:link
-        use:active
-      >
-        shape
-      </a>
-      <a
-        href="/Canvas"
-        class="block mt-4 sm:inline-block sm:mt-0 text-indigo-100
-        hover:text-white mr-4 nav-link"
-        use:link
-        use:active
-      >
-        Canvas
-      </a>
+      {/each}
     </div>
   </div>
 </nav>

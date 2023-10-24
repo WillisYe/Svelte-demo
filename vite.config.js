@@ -25,6 +25,7 @@ export default defineConfig({
     ],
     server: {
         port: 3020,
+        https: false,
         proxy: {
             '/apix': {
                 target: 'https://fragrant-waterfall-d607.ywbyl7722.workers.dev/',

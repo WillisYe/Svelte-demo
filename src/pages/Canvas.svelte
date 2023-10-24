@@ -40,7 +40,10 @@
     var colorStr = Math.floor(base * (x + 1))
       .toString(16)
       .padStart(6, "0");
-    document.getElementById("color_change").style.background = `#${colorStr}`;
+    var color_change = document.getElementById("color_change");
+    if (color_change) {
+      color_change.style.background = `#${colorStr}`;
+    }
 
     window.requestAnimationFrame(step);
     // if (elapsed < 2000) {
@@ -62,8 +65,8 @@
     borderStyle = "pink",
     fillStyle = "yellow"
   ) {
-    canvas.setAttribute("width", 2 * R + '');
-    canvas.setAttribute("height", 2 * R + '');
+    canvas.setAttribute("width", 2 * R + "");
+    canvas.setAttribute("height", 2 * R + "");
     drawStar(ctx, n, r, R, x, y, rot, borderWidth, borderStyle, fillStyle);
   }
 

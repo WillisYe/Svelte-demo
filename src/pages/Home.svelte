@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import axios from "axios";
     import Apis from "../utils/api.js";
     async function apitest(request) {
