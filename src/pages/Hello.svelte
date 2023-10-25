@@ -99,7 +99,6 @@
           }
           data = data.sort((prev, cur) => cur.count - prev.count);
           list.data = data;
-          console.log('list.data')
           console.log(list.data)
           list.dataShow = JSON.parse(JSON.stringify(list.data));
           list.count = {
