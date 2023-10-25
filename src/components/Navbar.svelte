@@ -6,7 +6,6 @@
   var navs = Object.keys(routes)
     .map((item) => item.split("/")[1])
     .filter((item) => item);
-  console.log(navs);
 </script>
 
 <nav class="flex items-center justify-between flex-wrap">
