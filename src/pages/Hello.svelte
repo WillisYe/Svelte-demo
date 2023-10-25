@@ -41,8 +41,6 @@
       Promise.allSettled(ps)
         .then((res) => {
           var dataAll = "";
-          console.log('res======')
-          console.log(res)
           for (const r of res) {
             if (r?.value?.data) {
               dataAll += "\n" + r?.value?.data;
