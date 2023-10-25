@@ -147,7 +147,7 @@
         <h1 class="flex-1 font-black">
             <!-- 待办事项(构建工具使用vite或者snowpack，待处理) -->
         </h1>
-        <button on:click={ws.send} class="btn btn-blue mr-1">send</button>
+        <!-- <button on:click={ws.send} class="btn btn-blue mr-1">send</button> -->
         <button on:click={list.addItem()} class="btn btn-blue mr-1">添加</button
         >
         <button on:click={list.clear()} class="btn btn-red">清空</button>
