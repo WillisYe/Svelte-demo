@@ -7,7 +7,7 @@
     setTimeout(() => {
       // 五角星
       canvas = document.querySelector("canvas#canvas");
-      if (canvas.getContext) {
+      if (canvas?.getContext) {
         var ctx = canvas.getContext("2d");
         draw(ctx, 5);
       }
