@@ -73,7 +73,6 @@
             }
             return obj;
           });
-          console.log(arr);
           console.log(list.keys);
           var data = [];
           for (const item of arr) {
