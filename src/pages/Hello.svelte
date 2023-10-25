@@ -170,18 +170,18 @@
 <div class="page-wrap p">
   <div class="flex flex-row p-1 mt-2 items-center">
     <h1 class="flex-1 font-black">uniApp崩溃日志数据分析</h1>
-    <div on:click={list.changeType("H5")} class="btn btn-blue mr-1">
+    <button on:click={list.changeType("H5")} class="btn btn-blue mr-1">
       只看H5({list.count.H5})
-    </div>
-    <div on:click={list.changeType("APP")} class="btn btn-blue mr-1">
+    </button>
+    <button on:click={list.changeType("APP")} class="btn btn-blue mr-1">
       只看APP({list.count.APP})
-    </div>
-    <div on:click={list.changeType("third")} class="btn btn-blue mr-1">
+    </button>
+    <button on:click={list.changeType("third")} class="btn btn-blue mr-1">
       只看第三方({list.count.third})
-    </div>
-    <div on:click={list.changeType("all")} class="btn btn-blue">
+    </button>
+    <button on:click={list.changeType("all")} class="btn btn-blue">
       查看全部({list.count.all})
-    </div>
+    </button>
   </div>
   <div class="mb-2">
     <p class="page-wrap-p">

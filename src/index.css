@@ -1,4 +1,7 @@
+@unocss;
+
 .btn {
+    border: 0 none;
     @apply py-1 px-3 rounded inline-block cursor-pointer text-xs;
 }
 

@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+    // @ts-nocheck
 
     import axios from "axios";
     import Apis from "../utils/api.js";
@@ -28,7 +28,7 @@
         init() {
             ws.ws = new WebSocket(
                 "ws://white-morning-6a1d.ywbyl7722.workers.dev"
-            )
+            );
         },
         addEvent() {
             ws.ws.addEventListener("open", function (event) {
@@ -66,9 +66,9 @@
                     // this never happens
                     break;
             }
-        }
+        },
     };
-    
+
     // ws.init()
     // ws.addEvent()
 
@@ -147,9 +147,10 @@
         <h1 class="flex-1 font-black">
             <!-- 待办事项(构建工具使用vite或者snowpack，待处理) -->
         </h1>
-        <div on:click={ws.send} class="btn btn-blue mr-1">send</div>
-        <div on:click={list.addItem()} class="btn btn-blue mr-1">添加</div>
-        <div on:click={list.clear()} class="btn btn-red">清空</div>
+        <button on:click={ws.send} class="btn btn-blue mr-1">send</button>
+        <button on:click={list.addItem()} class="btn btn-blue mr-1">添加</button
+        >
+        <button on:click={list.clear()} class="btn btn-red">清空</button>
     </div>
     <table class="text-center w-full">
         <tr class="border-b p-1">
@@ -172,16 +173,16 @@
                 </td>
                 <td class="w-50">{list.mapsShow(item.status, "status")}</td>
                 <td class="w-50">
-                    <div on:click={list.editItem(item)} class="btn btn-blue">
+                    <button on:click={list.editItem(item)} class="btn btn-blue">
                         编辑
-                    </div>
-                    <div
+                    </button>
+                    <button
                         on:click={list.removeItem(item.id)}
                         class="btn btn-red"
                     >
                         删除
-                    </div>
-                    <div
+                    </button>
+                    <button
                         on:click={list.changeStatus(
                             item,
                             item.status == 1 ? 0 : 1
@@ -189,7 +190,7 @@
                         class="btn {item.status == 1 ? 'btn-red' : 'btn-blue'} "
                     >
                         {item.status == 1 ? "停用" : "启用"}
-                    </div>
+                    </button>
                 </td>
             </tr>
         {/each}
