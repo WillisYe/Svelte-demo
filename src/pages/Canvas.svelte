@@ -142,7 +142,7 @@
     borderStyle = "pink",
     fillStyle = "yellow"
   ) {
-    if (node.getContext) {
+    if (node?.getContext) {
       var cxt = node.getContext("2d");
       cxt.beginPath();
 
