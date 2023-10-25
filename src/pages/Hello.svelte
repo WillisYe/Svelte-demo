@@ -73,7 +73,6 @@
             }
             return obj;
           });
-          console.log(list.keys);
           var data = [];
           for (const item of arr) {
             // NSGenericException异常会有多行报错信息，只保留异常名称；
