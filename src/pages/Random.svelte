@@ -154,7 +154,7 @@
         // `${index} ${cs} ${ys}`
       }
     );
-    console.log(JSON.stringify(paths_new, null, 2));
+    // console.log(JSON.stringify(paths_new, null, 2));
     // 技术后面插入点
     // console.log(paths.length)
     // console.log(JSON.stringify(paths, null, 2));
