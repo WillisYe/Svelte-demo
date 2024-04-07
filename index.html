@@ -38,7 +38,8 @@
     });
     
     if ("paintWorklet" in CSS) {
-      CSS.paintWorklet.addModule("src/utils/circle-stripe.js");
+      CSS.paintWorklet.addModule("src/houdini/circle-stripe.js");
+      CSS.paintWorklet.addModule("src/houdini/circle-stripe-1.js");
     } else {
       document.body.innerHTML =
         'You need support for <a href="https://drafts.css-houdini.org/css-paint-api/">CSS Paint API</a> to view this demo :(';
