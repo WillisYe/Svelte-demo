@@ -14,8 +14,12 @@
     "svelte-spa-router": "^3.3.0"
   },
   "devDependencies": {
+    "@iconify-json/logos": "^1.1.37",
     "@sveltejs/vite-plugin-svelte": "^2.4.6",
+    "@unocss/core": "^0.57.1",
     "@unocss/extractor-svelte": "^0.57.1",
+    "@unocss/postcss": "^0.57.1",
+    "@unocss/preset-icons": "^0.57.1",
     "postcss": "^8.4.31",
     "postcss-import": "^15.1.0",
     "postcss-load-config": "^4.0.1",
@@ -26,10 +30,6 @@
     "svelte-preprocess": "^5.0.4",
     "unocss": "^0.57.1",
     "vite": "^4.5.0",
-    "@iconify-json/logos": "^1.1.37",
-    "@unocss/core": "^0.57.1",
-    "@unocss/preset-icons": "^0.57.1",
-    "@unocss/postcss": "^0.57.1"
-    
+    "vite-plugin-mkcert": "^1.17.5"
   }
 }

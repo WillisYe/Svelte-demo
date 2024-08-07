@@ -8,16 +8,17 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import UnoCSS from 'unocss/vite'
+import mkcert from 'vite-plugin-mkcert';
 
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
         UnoCSS(),
-        svelte()
+        svelte(),
+        mkcert()
     ],
     server: {
-        port: 3020,
-        https: false,
+        https: true,
         proxy: {
             '/apix': {
                 target: 'https://fragrant-waterfall-d607.ywbyl7722.workers.dev/',
